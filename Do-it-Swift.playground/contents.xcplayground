@@ -1,2 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios' display-mode='raw'/>
+<?xml version="1.0" encoding="UTF-8"?>
+<playground target-platform="ios" version="6.0" requires-full-environment="false">
+    <pages>
+        <page name="01-1_max3"/>
+    </pages>
+</playground>
