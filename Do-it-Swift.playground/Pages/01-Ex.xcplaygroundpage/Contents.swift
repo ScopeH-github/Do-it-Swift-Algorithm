@@ -1,4 +1,7 @@
 let a = 3, b = 1, c = 4, d = 2
+print("a: \(a), b: \(b), c: \(c), d: \(d)")
+
+//MARK: - Q1
 
 func max4(a: Int, b: Int, c: Int, d: Int) -> Int {
     var max = a
@@ -8,7 +11,20 @@ func max4(a: Int, b: Int, c: Int, d: Int) -> Int {
     
     return max
 }
+print("max4(\(a),\(b),\(c),\(d))")
+print(max4(a: a, b: b, c: c, d: d))
 
+//MARK: - Q2
+func min3(a: Int, b: Int, c: Int) -> Int {
+    var min = a
+    b < min ? min = b : ()
+    c < min ? min = c : ()
+    return min
+}
+print("min3(\(a),\(d),\(c))")
+print(min3(a: a, b: d, c: c))
+
+//MARK: - Q3
 func min4(a: Int, b: Int, c: Int, d: Int) -> Int {
     var min = a
     b < min ? min = b : ()
@@ -17,7 +33,7 @@ func min4(a: Int, b: Int, c: Int, d: Int) -> Int {
     
     return min
 }
-
-print("a: \(a), b: \(b), c: \(c), d: \(d)")
-print(max4(a: a, b: b, c: c, d: d))
+print("min4(\(a),\(b),\(c),\(d))")
 print(min4(a: a, b: b, c: c, d: d))
+
+
