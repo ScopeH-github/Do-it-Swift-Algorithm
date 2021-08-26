@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<playground requires-full-environment="false" target-platform="ios" version="6.0">
+<playground version="6.0" target-platform="ios" requires-full-environment="false">
     <pages>
         <page name="01-1_max3"/>
         <page name="01-2_max3comb"/>
         <page name="01-Ex01"/>
         <page name="01-1c-1_med3"/>
+        <page name="01-3_sign"/>
     </pages>
 </playground>
