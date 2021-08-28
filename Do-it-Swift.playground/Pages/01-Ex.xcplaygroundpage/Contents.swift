@@ -139,3 +139,20 @@ for i in num1...num2 {
 }
 print(sumQ9)
 print()
+
+//MARK: - Q10
+var aQ10: Int
+var bQ10: Int
+var tmp = 0
+var arr = [6, 3, 9]
+
+print("a: ", terminator: ""); aQ10 = 6; print(aQ10)
+repeat {
+    print("b: ", terminator: ""); bQ10 = arr[tmp]; print(bQ10)
+    if aQ10 >= bQ10 {
+        print("Input value greater than a!")
+    }
+    tmp += 1
+} while aQ10 >= bQ10
+print("b - a = \(bQ10 - aQ10)")
+print()
