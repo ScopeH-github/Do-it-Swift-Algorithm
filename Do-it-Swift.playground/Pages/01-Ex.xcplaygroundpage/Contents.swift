@@ -1,3 +1,5 @@
+import Foundation
+
 let a = 3, b = 1, c = 4, d = 2
 print("a: \(a), b: \(b), c: \(c), d: \(d)")
 
@@ -155,4 +157,27 @@ repeat {
     tmp += 1
 } while aQ10 >= bQ10
 print("b - a = \(bQ10 - aQ10)")
+print()
+
+//MARK: - Q11
+var nQ11: Int
+let sample = [-23, 0, 102319, 7]
+var index = 0
+var count = 0
+
+repeat {
+    print("n : ", terminator: "")
+    nQ11 = sample[index]
+    print(nQ11)
+    if nQ11 <= 0 {
+        print("Try again: Number should be greater than 0.")
+    }
+    index += 1
+} while nQ11 <= 0
+
+while nQ11 % Int(pow(10, Double(count))) < nQ11 {
+    count += 1
+}
+
+print("\(nQ11) is \(count) digit(s) number.")
 print()
