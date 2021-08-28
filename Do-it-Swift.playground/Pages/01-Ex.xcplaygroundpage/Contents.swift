@@ -124,3 +124,18 @@ nQ8 = 10
 print(nQ8)
 sumQ8 = (1 + nQ8) * nQ8 / 2
 print("Sum of 1 to \(nQ8) = \(sumQ8)")
+print()
+
+//MARK: - Q9
+var num1, num2 : Int
+var sumQ9 = 0
+
+print("get sum from a to b.")
+print("a: ", terminator: ""); num1 = 3; print(num1)
+print("b: ", terminator: ""); num2 = 10; print(num2)
+
+for i in num1...num2 {
+    sumQ9 += i
+}
+print(sumQ9)
+print()
