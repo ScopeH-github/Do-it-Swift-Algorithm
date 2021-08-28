@@ -13,6 +13,7 @@ func max4(a: Int, b: Int, c: Int, d: Int) -> Int {
 }
 print("max4(\(a),\(b),\(c),\(d))")
 print(max4(a: a, b: b, c: c, d: d))
+print()
 
 //MARK: - Q2
 func min3(a: Int, b: Int, c: Int) -> Int {
@@ -23,6 +24,7 @@ func min3(a: Int, b: Int, c: Int) -> Int {
 }
 print("min3(\(a),\(d),\(c))")
 print(min3(a: a, b: d, c: c))
+print()
 
 //MARK: - Q3
 func min4(a: Int, b: Int, c: Int, d: Int) -> Int {
@@ -35,7 +37,7 @@ func min4(a: Int, b: Int, c: Int, d: Int) -> Int {
 }
 print("min4(\(a),\(b),\(c),\(d))")
 print(min4(a: a, b: b, c: c, d: d))
-
+print()
 
 let sampleData: [(a: Int, b: Int, c: Int)] = [(3,2,1), (3,2,2), (3,1,2), (3,2,3), (2,1,3), (3,3,2), (3,3,3), (2,2,3), (2,3,1), (2,3,2), (1,3,2), (2,3,3), (1,2,3)]
 //MARK: - Q4
@@ -59,6 +61,7 @@ func med3(a: Int, b: Int, c: Int) -> Int {
 for (a, b, c) in sampleData {
     print("med3(\(a),\(b),\(c)) = \(med3(a: a, b: b, c: c))")
 }
+print()
 
 //MARK: - Q5
 func med3alt(a: Int, b: Int, c: Int) -> Int {
@@ -73,4 +76,26 @@ func med3alt(a: Int, b: Int, c: Int) -> Int {
 for (a, b, c) in sampleData {
     print("med3alt(\(a),\(b),\(c)) = \(med3alt(a: a, b: b, c: c))")
 }
+print()
 // 1C-1에서는 최악의 경우 3번만 비교하면 되지만 이번 예제의 경우 최악의 경우 10번을 비교해야 한다.
+
+//MARK: - Q6
+var i = 1, n: Int
+var sum = 0
+print("Get sum of 1 to n.")
+print("n :", terminator: " ")
+
+//MARK: - 입력이 안 되므로 따로 설정
+n = 5
+//MARK: -
+print(n)
+
+while i <= n {
+    sum += i
+    i += 1
+    print(i) // HERE!
+}
+print("Sum of 1 to \(n) is \(sum).")
+print()
+
+
