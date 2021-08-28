@@ -80,22 +80,47 @@ print()
 // 1C-1에서는 최악의 경우 3번만 비교하면 되지만 이번 예제의 경우 최악의 경우 10번을 비교해야 한다.
 
 //MARK: - Q6
-var i = 1, n: Int
-var sum = 0
+var iQ6 = 1, nQ6: Int
+var sumQ6 = 0
 print("Get sum of 1 to n.")
 print("n :", terminator: " ")
 
 //MARK: - 입력이 안 되므로 따로 설정
-n = 5
+nQ6 = 5
 //MARK: -
-print(n)
+print(nQ6)
 
-while i <= n {
-    sum += i
-    i += 1
-    print(i) // HERE!
+while iQ6 <= nQ6 {
+    sumQ6 += iQ6
+    iQ6 += 1
+    print(iQ6) // HERE!
 }
-print("Sum of 1 to \(n) is \(sum).")
+print("Sum of 1 to \(nQ6) is \(sumQ6).")
 print()
 
+//MARK: - Q7
+var sumQ7 = 0
+var nQ7: Int
 
+print("Get Sum of 1 to n")
+print("n :", terminator: " ")
+nQ7 = 7
+print(nQ7)
+
+for i in 1...nQ7 {
+    print(i, terminator: i == nQ7 ? " = " : " + ")
+    sumQ7 += i
+}
+print(sumQ7)
+print()
+
+//MARK: - Q8
+var sumQ8 = 0
+var nQ8: Int
+
+print("Get sum of 1 to n")
+print("n :", terminator: " ")
+nQ8 = 10
+print(nQ8)
+sumQ8 = (1 + nQ8) * nQ8 / 2
+print("Sum of 1 to \(nQ8) = \(sumQ8)")
