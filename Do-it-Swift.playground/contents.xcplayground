@@ -10,6 +10,7 @@
         <page name="01-6_sum-for-pos"/>
         <page name="01-1c-2_dbl-digits"/>
         <page name="01-7_multi99table"/>
+        <page name="01-8_triangleLB"/>
         <page name="01-Ex"/>
     </pages>
 </playground>
