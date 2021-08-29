@@ -220,3 +220,18 @@ for i in 1...9 {
     print()
 }
 print()
+
+//MARK: - Q14
+var nQ13: Int
+
+print("n : ", terminator: "")
+nQ13 = 4
+print(nQ13)
+for i in 1...nQ13 {
+    for j in 1...nQ13 {
+        print("*", terminator: "  ")
+    }
+    print()
+}
+print()
+
