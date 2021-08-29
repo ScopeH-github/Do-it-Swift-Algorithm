@@ -202,3 +202,21 @@ for i in 1...9 {
 }
 print()
 
+//MARK: - Q13
+print("  ", terminator: "|")
+for i in 1...9 {
+    print(String(format: "%3d", i), terminator: "")
+}
+print()
+for i in 0...9 {
+    print("--", terminator: i == 0 ? "+" : "-")
+}
+print()
+for i in 1...9 {
+    print(String(format:"%2d", i), terminator: "|")
+    for j in 1...9 {
+        print(String(format: "%3d", i+j), terminator: "")
+    }
+    print()
+}
+print()
