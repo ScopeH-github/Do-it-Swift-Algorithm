@@ -181,3 +181,24 @@ while nQ11 % Int(pow(10, Double(count))) < nQ11 {
 
 print("\(nQ11) is \(count) digit(s) number.")
 print()
+
+//MARK: - Q12
+
+print("  ", terminator: "|")
+for i in 1...9 {
+    print(String(format: "%3d", i), terminator: "")
+}
+print()
+for i in 0...9 {
+    print("--", terminator: i == 0 ? "+" : "-")
+}
+print()
+for i in 1...9 {
+    print(String(format:"%2d", i), terminator: "|")
+    for j in 1...9 {
+        print(String(format: "%3d", i*j), terminator: "")
+    }
+    print()
+}
+print()
+
