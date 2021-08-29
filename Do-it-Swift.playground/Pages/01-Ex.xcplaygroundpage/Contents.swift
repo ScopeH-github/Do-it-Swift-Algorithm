@@ -235,3 +235,19 @@ for i in 1...nQ13 {
 }
 print()
 
+//MARK: - Q15
+var height: Int
+var width: Int
+print("height :", terminator: " ")
+height = 3
+print(height)
+print("width :", terminator: " ")
+width = 7
+print(width)
+for i in 1...height {
+    for j in 1...width {
+        print("*", terminator: "  ")
+    }
+    print()
+}
+print()
