@@ -285,11 +285,13 @@ func triangleLU(n: Int) {
 }
 
 func triangleRU(n: Int) {
-    for i in stride(from: n, to: 0, by: -1) {
-        for _ in i...(n-i) {
-            print(" ", terminator: "  ")
+    for i in 1...n {
+        if i > 1 {
+            for _ in 1...i-1 {
+                print(" ", terminator: "  ")
+            }
         }
-        for _ in i...i {
+        for _ in stride(from: n+1-i, to: 0, by: -1) {
             print("*", terminator: "  ")
         }
         print()
