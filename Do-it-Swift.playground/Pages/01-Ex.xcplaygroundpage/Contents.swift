@@ -253,21 +253,38 @@ for i in 1...height {
 print()
 
 //MARK: - Q16
-var n: Int
+var n16: Int
 
 repeat {
     print("How much layers do you want : ", terminator: "")
     
-    n = 5
-    print(n)
+    n16 = 5
+    print(n16)
     
-} while n <= 0
+} while n16 <= 0
 
-for i in 1...n {
-    for _ in 1...i {
-        print("*", terminator: "  ")
+
+// bottom-left lb
+func triangleLB(n: Int) {
+    for i in 1...n {
+        for _ in 1...i {
+            print("*", terminator: "  ")
+        }
+        print()
     }
-    print()
 }
 
+//top-left
+func triangleLU(n: Int) {
+    for i in stride(from: n, to: 0, by: -1) {
+        for _ in 1...i {
+            print("*", terminator: "  ")
+        }
+        print()
+    }
+}
+
+triangleLB(n: n16)
+print()
+triangleLU(n: n16)
 
