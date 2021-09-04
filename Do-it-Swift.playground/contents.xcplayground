@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<playground target-platform="ios" requires-full-environment="false" version="6.0">
+<playground version="6.0" target-platform="ios" requires-full-environment="false">
     <pages>
         <page name="01-1_max3"/>
         <page name="01-2_max3comb"/>
@@ -15,5 +15,6 @@
         <page name="02-1_intary"/>
         <page name="02-2_intary-init"/>
         <page name="02-2-1_intary-init2"/>
+        <page name="02-3_intdynamic"/>
     </pages>
 </playground>
