@@ -284,6 +284,7 @@ func triangleLU(n: Int) {
     }
 }
 
+//top-right
 func triangleRU(n: Int) {
     for i in 1...n {
         if i > 1 {
@@ -298,8 +299,28 @@ func triangleRU(n: Int) {
     }
 }
 
+// bottom-right
+func triangleRB(n: Int) {
+    for i in stride(from: n, to: 0, by: -1) {
+        if i > 1 {
+            for _ in 1...i-1 {
+                print(" ", terminator: "  ")
+            }
+        }
+        for _ in 1...n-i+1 {
+            print("*", terminator: "  ")
+        }
+        print()
+    }
+}
+
 triangleLB(n: n16)
 print()
 triangleLU(n: n16)
 print()
 triangleRU(n: n16)
+print()
+triangleRB(n: n16)
+print("\n")
+
+//MARK: - Q17
