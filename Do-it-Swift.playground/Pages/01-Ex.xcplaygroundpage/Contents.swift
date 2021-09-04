@@ -284,7 +284,20 @@ func triangleLU(n: Int) {
     }
 }
 
+func triangleRU(n: Int) {
+    for i in stride(from: n, to: 0, by: -1) {
+        for _ in i...(n-i) {
+            print(" ", terminator: "  ")
+        }
+        for _ in i...i {
+            print("*", terminator: "  ")
+        }
+        print()
+    }
+}
+
 triangleLB(n: n16)
 print()
 triangleLU(n: n16)
-
+print()
+triangleRU(n: n16)
