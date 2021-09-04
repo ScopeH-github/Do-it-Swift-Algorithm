@@ -287,27 +287,25 @@ func triangleLU(n: Int) {
 //top-right
 func triangleRU(n: Int) {
     for i in 1...n {
-        if i > 1 {
-            for _ in 1...i-1 {
-                print(" ", terminator: "  ")
-            }
-        }
         for _ in stride(from: n+1-i, to: 0, by: -1) {
             print("*", terminator: "  ")
         }
         print()
+        for _ in 1...i {
+            print(" ", terminator: "  ")
+        }
     }
+    print()
 }
 
 // bottom-right
 func triangleRB(n: Int) {
-    for i in stride(from: n, to: 0, by: -1) {
-        if i > 1 {
-            for _ in 1...i-1 {
-                print(" ", terminator: "  ")
-            }
+    for i in 1...n {
+        for _ in stride(from: n, to: i, by: -1) {
+            print(" ", terminator: "  ")
+            
         }
-        for _ in 1...n-i+1 {
+        for _ in 1...i {
             print("*", terminator: "  ")
         }
         print()
@@ -319,8 +317,31 @@ print()
 triangleLU(n: n16)
 print()
 triangleRU(n: n16)
-print()
 triangleRB(n: n16)
 print("\n")
 
 //MARK: - Q17
+func spira(n: Int) {
+    for i in 1...n {
+        for _ in stride(from: n, to: i, by: -1) {
+            print(" ", terminator: "  ")
+        }
+        var starCount = (i - 1) * 2 + 1
+        for _ in 1...starCount {
+            print("*", terminator: "  ")
+        }
+        print()
+    }
+}
+
+var n17: Int
+
+repeat {
+    print("How much layers do you want : ", terminator: "")
+    
+    n17 = 5
+    print(n17)
+    
+} while n17 <= 0
+spira(n: n17)
+print("\n")
