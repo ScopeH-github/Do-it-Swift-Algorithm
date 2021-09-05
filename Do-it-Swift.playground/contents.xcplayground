@@ -17,5 +17,6 @@
         <page name="02-2-1_intary-init2"/>
         <page name="02-3_intdynamic"/>
         <page name="02-4_intary-dynamic"/>
+        <page name="02-5_ary-max"/>
     </pages>
 </playground>
