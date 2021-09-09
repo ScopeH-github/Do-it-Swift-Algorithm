@@ -19,5 +19,6 @@
         <page name="02-4_intary-dynamic"/>
         <page name="02-5_ary-max"/>
         <page name="02-6_ary-max-rand"/>
+        <page name="02-7_rev-ary"/>
     </pages>
 </playground>
