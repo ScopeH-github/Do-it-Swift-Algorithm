@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<playground target-platform="ios" requires-full-environment="false" version="6.0">
+<playground requires-full-environment="false" version="6.0" target-platform="ios">
     <pages>
         <page name="01-1_max3"/>
         <page name="01-2_max3comb"/>
@@ -21,5 +21,6 @@
         <page name="02-6_ary-max-rand"/>
         <page name="02-7_rev-ary"/>
         <page name="02-8_card-conv"/>
+        <page name="02-Ex "/>
     </pages>
 </playground>
