@@ -69,3 +69,30 @@ for i in 0..<number3 {
     print(height3[i])
 }
 print("Average of values is \(aveOf(array: height3)).")
+print()
+
+//MARK: - Q4
+func maxOf(array: [Int]) -> Int {
+    var max = array[0]
+    for i in 1..<array.count {
+        array[i] > max ? max = array[i] : ()
+    }
+    return max
+}
+
+var height4 : [Int] = []
+var number4: Int
+
+print("Number of people :", terminator: " ")
+number4 = Int.random(in: 5...20)
+print(number4)
+print("Enter height of each \(number4) people.")
+for i in 0..<number4 {
+    print("height[\(i)] : ", terminator : "")
+    height4.append(Int.random(in: 130...190))
+    print(height4[i])
+}
+print("Max of values is \(maxOf(array: height4)).")
+print()
+
+
