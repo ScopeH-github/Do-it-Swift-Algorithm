@@ -124,3 +124,54 @@ for i in x {
 print()
 print("Reversed sort complete.")
 print()
+
+//MARK: - Q6
+func cardConv(x: inout UInt, n: Int, _ d: inout [Character]) -> Int {
+    let dchar = "0123456789ABCDEFGHIJKLMNOPQRStUVWXYZ"
+    var digits = 0
+    if x == 0 {
+        d[digits] = dchar[dchar.startIndex]
+        digits += 1
+    } else {
+        while x != 0 {
+            d.insert(dchar[dchar.index(dchar.startIndex, offsetBy: Int(x) % n)], at: 0)
+            digits += 1
+            x /= UInt(n)
+        }
+    }
+    return digits
+}
+
+var no6: UInt
+var cd6: Int
+var dno6: Int
+var cno6: [Character] = []
+var retry6: Bool = false
+
+print("Convert radix from decimal.")
+repeat {
+    no6 = UInt.random(in: 0...999)
+    let entered = no6
+    print("Number(non-negative): \(no6)")
+    repeat {
+        cd6 = Int.random(in: 1...40)
+        print("Radix (2-36): \(cd6)")
+    } while cd6 < 2 || cd6 > 36
+    dno6 = cardConv(x: &no6, n: cd6, &cno6)
+    print("\n\(entered) is ", terminator : "")
+    for i in cno6 {
+        print(i, terminator: "")
+    }
+    print(" in radix \(cd6).\n")
+    let answer = Int.random(in: 0...1)
+    cno6.removeAll()
+    print("Retry? (1-Yes / 0-No) : \(answer)")
+    if answer == 0 {
+        retry6 = false
+    } else {
+        retry6 = true
+    }
+    print("\n")
+} while retry6
+
+
