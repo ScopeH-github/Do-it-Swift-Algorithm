@@ -95,4 +95,32 @@ for i in 0..<number4 {
 print("Max of values is \(maxOf(array: height4)).")
 print()
 
+//  MARK: - Q5
+func swapValue<T>(_ x: Int, _ y: Int, _ a : inout [T]) { let t = a[x]; a[x] = a[y]; a[y] = t }
 
+func aryReverse(a: inout [Int]) {
+    let n = a.count
+    for i in 0..<n/2 {
+        for i in a {
+            print(i, terminator: " ")
+        }
+        print()
+        print("Switch: a[\(i)], a[\(n-i-1)]")
+        swapValue(i, n-i-1, &a)
+    }
+}
+
+var x: [Int] = []
+var nx: Int
+
+nx = Int.random(in: 3...10)
+for i in 0..<nx {
+    x.append(Int.random(in: -100...100))
+}
+aryReverse(a: &x)
+for i in x {
+    print(i, terminator: " ")
+}
+print()
+print("Reversed sort complete.")
+print()
