@@ -43,6 +43,29 @@ for i in 0..<number2 {
     height2.append(Int.random(in: 130...190))
     print(height2[i])
 }
-print("Minimum value is \(sumOf(array: height2)).")
+print("Sum of values is \(sumOf(array: height2)).")
+print()
 
 //MARK: - Q3
+func aveOf(array: [Int]) -> Int {
+    var ave = array[0]
+    for i in 1..<array.count {
+        ave += array[i]
+    }
+    ave /= array.count
+    return ave
+}
+
+var height3 :  [Int] = []
+var number3: Int
+
+print("Number of people :", terminator: " ")
+number3 = 5
+print(number3)
+print("Enter height of each \(number3) people.")
+for i in 0..<number3 {
+    print("height[\(i)] : ", terminator : "")
+    height3.append(Int.random(in: 130...190))
+    print(height3[i])
+}
+print("Average of values is \(aveOf(array: height3)).")
