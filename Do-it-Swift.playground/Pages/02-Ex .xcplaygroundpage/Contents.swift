@@ -284,3 +284,43 @@ print("after")
 print("array a: \(a9)")
 print("array b: \(b9)")
 print()
+
+//  MARK: - Q10
+func shuffle(a: inout [Int]) {
+    var index : [Int] = []
+    while index.count != a.count {
+        var temp = Int.random(in: 0...a.count-1)
+        var isThere = false
+        for i in index {
+            if temp == i {
+                isThere = true
+                break
+            } else {
+                isThere = false
+            }
+        }
+        if !isThere {
+            index.append(temp)
+        } else {
+            isThere = false
+        }
+    }
+    let b = a
+    a = []
+    for i in index {
+        a.append(b[i])
+    }
+}
+
+var a: [Int] = []
+var b: [Int] = []
+let acount = Int.random(in: 5...10)
+for i in 0..<acount {
+    a.append(Int.random(in: -50...50))
+}
+b = a.shuffled()    // Apple's bundled Suffle
+
+print("before a = \(a)")
+shuffle(a: &a)
+print("after a = \(a)")
+print("after apple_shuffle a -> b = \(b)")
