@@ -174,4 +174,65 @@ repeat {
     print("\n")
 } while retry6
 
+print()
+
+
+//  MARK: - Q7
+import Foundation
+func cardConvSpecific(x: inout UInt, n: Int, _ d: inout [Character]) -> Int {
+    let dchar = "0123456789ABCDEFGHIJKLMNOPQRStUVWXYZ"
+    var digits = 0
+    print()
+    if x == 0 {
+        d[digits] = dchar[dchar.startIndex]
+        digits += 1
+    } else {
+        while x != 0 {
+            let div = String(format: "%2d", n)
+            let divis = String(format: "%4d", x)
+            let rem = dchar[dchar.index(dchar.startIndex, offsetBy: Int(x) % n)]
+            d.insert(rem, at: 0)
+            print("\(div)| \(divis) ••• \(rem)")
+            print("  +------")
+            digits += 1
+            x /= UInt(n)
+        }
+        print(String(format: "%8d", x))
+    }
+    return digits
+}
+
+var no7: UInt
+var cd7: Int
+var dno7: Int
+var cno7: [Character] = []
+var retry7: Bool = false
+
+print("Convert radix from decimal.")
+repeat {
+    no7 = UInt.random(in: 0...9999)
+    let entered = no7
+    print("Number(non-negative): \(no7)")
+    repeat {
+        cd7 = Int.random(in: 1...40)
+        print("Radix (2-36): \(cd7)")
+    } while cd7 < 2 || cd7 > 36
+    dno7 = cardConvSpecific(x: &no7, n: cd7, &cno7)
+    print("\n\(entered) is ", terminator : "")
+    for i in cno7 {
+        print(i, terminator: "")
+    }
+    print(" in radix \(cd7).\n")
+    let answer = Int.random(in: 0...1)
+    cno7.removeAll()
+    print("Retry? (1-Yes / 0-No) : \(answer)")
+    if answer == 0 {
+        retry7 = false
+    } else {
+        retry7 = true
+    }
+    print("\n")
+} while retry7
+
+print()
 
