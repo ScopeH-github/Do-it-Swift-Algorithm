@@ -47,12 +47,12 @@ print("Sum of values is \(sumOf(array: height2)).")
 print()
 
 //MARK: - Q3
-func aveOf(array: [Int]) -> Int {
-    var ave = array[0]
+func aveOf(array: [Int]) -> Double {
+    var ave = Double(array[0])
     for i in 1..<array.count {
-        ave += array[i]
+        ave += Double(array[i])
     }
-    ave /= array.count
+    ave /= Double(array.count)
     return ave
 }
 
@@ -243,22 +243,44 @@ func aryCopy(a: inout [Int], b: [Int]) {
     }
 }
 
-var a : [Int] = []
-var b : [Int] = []
-var n = Int.random(in: 5...10)
+var a8 : [Int] = []
+var b8 : [Int] = []
+var n8 = Int.random(in: 5...10)
 
-for i in 0..<n {
-    b.append(Int.random(in: -50...50))
+for i in 0..<n8 {
+    b8.append(Int.random(in: -50...50))
 }
 print("before")
-print("array a: \(a)")
-print("array b: \(b)")
+print("array a: \(a8)")
+print("array b: \(b8)")
 
-aryCopy(a: &a, b: b)
+aryCopy(a: &a8, b: b8)
 print("after")
-print("array a: \(a)")
-print("array b: \(b)")
+print("array a: \(a8)")
+print("array b: \(b8)")
 print()
 
 // MARK: - Q9
+func aryReverseCopy(a: inout [Int], b: [Int]) {
+    for i in b {
+        a.insert(i, at: 0)
+    }
+}
 
+var a9 : [Int] = []
+var b9 : [Int] = []
+var n9 = Int.random(in: 5...10)
+
+for i in 0..<n9 {
+    b9.append(Int.random(in: -50...50))
+}
+print("before")
+print("array a: \(a9)")
+print("array b: \(b9)")
+
+aryReverseCopy(a: &a9, b: b9)
+
+print("after")
+print("array a: \(a9)")
+print("array b: \(b9)")
+print()
