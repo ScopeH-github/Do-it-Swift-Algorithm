@@ -236,3 +236,29 @@ repeat {
 
 print()
 
+//  MAKR: - Q8
+func aryCopy(a: inout [Int], b: [Int]) {
+    for i in b {
+        a.append(i)
+    }
+}
+
+var a : [Int] = []
+var b : [Int] = []
+var n = Int.random(in: 5...10)
+
+for i in 0..<n {
+    b.append(Int.random(in: -50...50))
+}
+print("before")
+print("array a: \(a)")
+print("array b: \(b)")
+
+aryCopy(a: &a, b: b)
+print("after")
+print("array a: \(a)")
+print("array b: \(b)")
+print()
+
+// MARK: - Q9
+
