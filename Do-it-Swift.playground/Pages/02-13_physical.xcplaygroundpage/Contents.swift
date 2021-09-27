@@ -22,7 +22,7 @@ func distVision(dat: [PhysCheck], dist: inout [Int]) {
     }
     for i in 0..<dat.count {
         if dat[i].vision >= 0.0 && dat[i].vision <= Double(VMAX)/10.0 {
-            dist[Int(dat[i].vision) * 10] += 1
+            dist[Int(dat[i].vision * 10)] += 1
         }
     }
 }
