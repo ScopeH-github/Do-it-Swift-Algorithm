@@ -374,3 +374,121 @@ func dayOfYear(y: Int, m: Int, d: Int) -> Int {
     }
     return partMdays.reduce(0, { $0 + $1 }) + d
 }
+
+
+//  MARK: - Q12
+func Q12() {
+    
+    let VMAX = 21
+    
+    struct PhysCheck {
+        var name: String
+        var height: Int
+        var vision: Double
+    }
+    
+    func aveHeight(dat: [PhysCheck]) -> Double {
+        var sum = 0.0
+        for i in dat {
+            sum += Double(i.height)
+        }
+        return sum / Double(dat.count)
+    }
+    
+    func distVision(dat: [PhysCheck], dist: inout [Int]) {
+        for i in 0..<VMAX {
+            dist[i] = 0
+        }
+        for i in 0..<dat.count {
+            if dat[i].vision >= 0.0 && dat[i].vision <= Double(VMAX)/10.0 {
+                dist[Int(dat[i].vision * 10)] += 1
+            }
+        }
+    }
+    
+    let x: [PhysCheck] = [
+        PhysCheck(name: "Sonic", height: 162, vision: 0.3),
+        PhysCheck(name: "Tails", height: 173, vision: 0.7),
+        PhysCheck(name: "Knux", height: 175, vision: 2.0),
+        PhysCheck(name: "Shadow", height: 171, vision: 1.5),
+        PhysCheck(name: "Rouge", height: 168, vision: 0.4),
+        PhysCheck(name: "Blaze", height: 174, vision: 1.2),
+        PhysCheck(name: "Silver", height: 169, vision: 0.8),
+        PhysCheck(name: "Marine", height: 161, vision: 2.0)
+    ]
+    var vdist: [Int] = Array(repeating: 0, count: VMAX)
+    print("========== Physical Check Table ==========")
+    print("\("Name".padding(toLength: 10, withPad: " ", startingAt: 0))\t\("Height".padding(toLength: 10, withPad: " ", startingAt: 0))\t\("Vision".padding(toLength: 10, withPad: " ", startingAt: 0))")
+    for i in x {
+        print("\("\(i.name)".padding(toLength: 10, withPad: " ", startingAt: 0))\t\(String(format: "%10d", i.height ))\t\(String(format: "%10.1f", i.vision))")
+    }
+    print("averageHeight: \(String(format: "%5.1f cm", aveHeight(dat: x)))")
+    distVision(dat: x, dist: &vdist)
+    print("Dist of Vision")
+    for i in 0..<VMAX {
+        print("\(String(format:"%3.1f", Double(i)/10.0)) ~ : ", terminator: "")
+        for j in 0..<vdist[i] {
+            print("*", terminator: "")
+        }
+        print()
+    }
+}
+
+Q12()
+print()
+
+//  MARK: - Q13
+func Q13() {
+    struct Date {
+        var y: Int
+        var m: Int
+        var d: Int
+    }
+    
+    func dateOf(y: Int, m: Int, d: Int) -> Date {
+        return Date(y: y, m: m, d: d)
+    }
+    
+    func after(x: Date, n: Int) -> Date {
+        var year: Int = 0
+        var month: Int = 0
+        var date: Int = 0
+        let dateFrm = DateFormatter()
+        dateFrm.dateFormat = "yyyy-M-d"
+        let calendar = Calendar.current
+        let initialDate = dateFrm.date(from: "\(x.y)-\(x.m)-\(x.d)")!
+        let day = DateComponents(day: n)
+        if let dayAfterN = calendar.date(byAdding: day, to: initialDate) {
+            let dateAterFrm = calendar.dateComponents([.year, .month, .day], from: dayAfterN)
+            year = Int(dateAterFrm.year!)
+            month = Int(dateAterFrm.month!)
+            date = Int(dateAterFrm.day!)
+        }
+        return Date(y: year, m: month, d: date)
+    }
+    
+    func before(x: Date, n: Int) -> Date {
+        var year: Int = 0
+        var month: Int = 0
+        var date: Int = 0
+        let dateFrm = DateFormatter()
+        dateFrm.dateFormat = "yyyy-M-d"
+        let calendar = Calendar.current
+        let initialDate = dateFrm.date(from: "\(x.y)-\(x.m)-\(x.d)")!
+        let day = DateComponents(day: -n)
+        if let dayBeforeN = calendar.date(byAdding: day, to: initialDate) {
+            let dateAterFrm = calendar.dateComponents([.year, .month, .day], from: dayBeforeN)
+            year = Int(dateAterFrm.year!)
+            month = Int(dateAterFrm.month!)
+            date = Int(dateAterFrm.day!)
+        }
+        return Date(y: year, m: month, d: date)
+    }
+    
+    let date = dateOf(y: 2021, m: 09, d: 28)
+    print(date)
+    print(after(x: date, n: 7))
+    print(before(x: date, n: 7))
+}
+Q13()
+print()
