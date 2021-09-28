@@ -1,44 +1,64 @@
 import Foundation
 
-let a = 3, b = 1, c = 4, d = 2
-print("a: \(a), b: \(b), c: \(c), d: \(d)")
-
 //MARK: - Q1
-
-func max4(a: Int, b: Int, c: Int, d: Int) -> Int {
-    var max = a
-    b > max ? max = b : ()
-    c > max ? max = c : ()
-    d > max ? max = d : ()
     
-    return max
+func Q1() {
+    let a = 3, b = 1, c = 4, d = 2
+    print("a: \(a), b: \(b), c: \(c), d: \(d)")
+    
+
+    func max4(a: Int, b: Int, c: Int, d: Int) -> Int {
+        var max = a
+        b > max ? max = b : ()
+        c > max ? max = c : ()
+        d > max ? max = d : ()
+        
+        return max
+    }
+    print("max4(\(a),\(b),\(c),\(d))")
+    print(max4(a: a, b: b, c: c, d: d))
 }
-print("max4(\(a),\(b),\(c),\(d))")
-print(max4(a: a, b: b, c: c, d: d))
+
+Q1()
 print()
 
 //MARK: - Q2
-func min3(a: Int, b: Int, c: Int) -> Int {
-    var min = a
-    b < min ? min = b : ()
-    c < min ? min = c : ()
-    return min
+
+func Q2() {
+    let a = 3, b = 1, c = 4
+    print("a: \(a), b: \(b), c: \(c)")
+    
+    
+    func min3(a: Int, b: Int, c: Int) -> Int {
+        var min = a
+        b < min ? min = b : ()
+        c < min ? min = c : ()
+        return min
+    }
+    print("min3(\(a),\(b),\(c))")
+    print(min3(a: a, b: b, c: c))
 }
-print("min3(\(a),\(d),\(c))")
-print(min3(a: a, b: d, c: c))
+
+Q2()
 print()
 
 //MARK: - Q3
-func min4(a: Int, b: Int, c: Int, d: Int) -> Int {
-    var min = a
-    b < min ? min = b : ()
-    c < min ? min = c : ()
-    d < min ? min = d : ()
-    
-    return min
+func Q3() {
+    let a = 3, b = 1, c = 4, d = 2
+    print("a: \(a), b: \(b), c: \(c), d: \(d)")
+    func min4(a: Int, b: Int, c: Int, d: Int) -> Int {
+        var min = a
+        b < min ? min = b : ()
+        c < min ? min = c : ()
+        d < min ? min = d : ()
+        
+        return min
+    }
+    print("min4(\(a),\(b),\(c),\(d))")
+    print(min4(a: a, b: b, c: c, d: d))
 }
-print("min4(\(a),\(b),\(c),\(d))")
-print(min4(a: a, b: b, c: c, d: d))
+
+Q3()
 print()
 
 let sampleData: [(a: Int, b: Int, c: Int)] = [(3,2,1), (3,2,2), (3,1,2), (3,2,3), (2,1,3), (3,3,2), (3,3,3), (2,2,3), (2,3,1), (2,3,2), (1,3,2), (2,3,3), (1,2,3)]
