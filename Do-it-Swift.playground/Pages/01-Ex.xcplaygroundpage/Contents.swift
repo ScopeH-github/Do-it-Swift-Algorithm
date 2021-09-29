@@ -61,43 +61,54 @@ func Q3() {
 Q3()
 print()
 
-let sampleData: [(a: Int, b: Int, c: Int)] = [(3,2,1), (3,2,2), (3,1,2), (3,2,3), (2,1,3), (3,3,2), (3,3,3), (2,2,3), (2,3,1), (2,3,2), (1,3,2), (2,3,3), (1,2,3)]
 //MARK: - Q4
-func med3(a: Int, b: Int, c: Int) -> Int {
-    if a >= b {
-        if b >= c {
-            return b
-        } else if a <= c {
+func Q4() {
+    let sampleData: [(a: Int, b: Int, c: Int)] = [(3,2,1), (3,2,2), (3,1,2), (3,2,3), (2,1,3), (3,3,2), (3,3,3), (2,2,3), (2,3,1), (2,3,2), (1,3,2), (2,3,3), (1,2,3)]
+    
+    func med3(a: Int, b: Int, c: Int) -> Int {
+        if a >= b {
+            if b >= c {
+                return b
+            } else if a <= c {
+                return a
+            } else {
+                return c
+            }
+        } else if a > c {
             return a
-        } else {
+        } else if b > c {
             return c
+        } else {
+            return b
         }
-    } else if a > c {
-        return a
-    } else if b > c {
-        return c
-    } else {
-        return b
+    }
+    for (a, b, c) in sampleData {
+        print("med3(\(a),\(b),\(c)) = \(med3(a: a, b: b, c: c))")
     }
 }
-for (a, b, c) in sampleData {
-    print("med3(\(a),\(b),\(c)) = \(med3(a: a, b: b, c: c))")
-}
+
+Q4()
 print()
 
 //MARK: - Q5
-func med3alt(a: Int, b: Int, c: Int) -> Int {
-    if (b >= a && c <= a) || (b <= a && c >= a) {
-        return a
-    } else if (a > b && c < b) || (a < b && c < b) {
-        return b
+func Q5() {
+    let sampleData: [(a: Int, b: Int, c: Int)] = [(3,2,1), (3,2,2), (3,1,2), (3,2,3), (2,1,3), (3,3,2), (3,3,3), (2,2,3), (2,3,1), (2,3,2), (1,3,2), (2,3,3), (1,2,3)]
+
+    func med3alt(a: Int, b: Int, c: Int) -> Int {
+        if (b >= a && c <= a) || (b <= a && c >= a) {
+            return a
+        } else if (a > b && c < b) || (a < b && c < b) {
+            return b
+        }
+        return c
     }
-    return c
+
+    for (a, b, c) in sampleData {
+        print("med3alt(\(a),\(b),\(c)) = \(med3alt(a: a, b: b, c: c))")
+    }
 }
 
-for (a, b, c) in sampleData {
-    print("med3alt(\(a),\(b),\(c)) = \(med3alt(a: a, b: b, c: c))")
-}
+Q5()
 print()
 // 1C-1에서는 최악의 경우 3번만 비교하면 되지만 이번 예제의 경우 최악의 경우 10번을 비교해야 한다.
 
