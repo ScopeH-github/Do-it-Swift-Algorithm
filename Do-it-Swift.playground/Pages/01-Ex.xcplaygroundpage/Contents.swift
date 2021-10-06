@@ -136,19 +136,23 @@ Q6()
 print()
 
 //MARK: - Q7
-var sumQ7 = 0
-var nQ7: Int
-
-print("Get Sum of 1 to n")
-print("n :", terminator: " ")
-nQ7 = 7
-print(nQ7)
-
-for i in 1...nQ7 {
-    print(i, terminator: i == nQ7 ? " = " : " + ")
-    sumQ7 += i
+func Q7() {
+    var sum = 0
+    var n: Int
+    
+    print("Get Sum of 1 to n")
+    print("n :", terminator: " ")
+    n = 7
+    print(n)
+    
+    for i in 1...n {
+        print(i, terminator: i == n ? " = " : " + ")
+        sum += i
+    }
+    print(sum)
 }
-print(sumQ7)
+
+Q7()
 print()
 
 //MARK: - Q8
