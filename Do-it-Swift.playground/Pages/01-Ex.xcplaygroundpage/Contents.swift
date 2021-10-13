@@ -1,12 +1,12 @@
 import Foundation
 
 //MARK: - Q1
-    
+
 func Q1() {
     let a = 3, b = 1, c = 4, d = 2
     print("a: \(a), b: \(b), c: \(c), d: \(d)")
     
-
+    
     func max4(a: Int, b: Int, c: Int, d: Int) -> Int {
         var max = a
         b > max ? max = b : ()
@@ -93,7 +93,7 @@ print()
 //MARK: - Q5
 func Q5() {
     let sampleData: [(a: Int, b: Int, c: Int)] = [(3,2,1), (3,2,2), (3,1,2), (3,2,3), (2,1,3), (3,3,2), (3,3,3), (2,2,3), (2,3,1), (2,3,2), (1,3,2), (2,3,3), (1,2,3)]
-
+    
     func med3alt(a: Int, b: Int, c: Int) -> Int {
         if (b >= a && c <= a) || (b <= a && c >= a) {
             return a
@@ -102,7 +102,7 @@ func Q5() {
         }
         return c
     }
-
+    
     for (a, b, c) in sampleData {
         print("med3alt(\(a),\(b),\(c)) = \(med3alt(a: a, b: b, c: c))")
     }
@@ -156,46 +156,60 @@ Q7()
 print()
 
 //MARK: - Q8
-var sumQ8 = 0
-var nQ8: Int
-
-print("Get sum of 1 to n")
-print("n :", terminator: " ")
-nQ8 = 10
-print(nQ8)
-sumQ8 = (1 + nQ8) * nQ8 / 2
-print("Sum of 1 to \(nQ8) = \(sumQ8)")
+func Q8() {
+    var sum = 0
+    var n: Int
+    
+    print("Get sum of 1 to n")
+    print("n :", terminator: " ")
+    n = 10
+    print(n)
+    sum = (1 + n) * n / 2
+    print("Sum of 1 to \(n) = \(sum)")
+}
+Q8()
 print()
 
 //MARK: - Q9
-var num1, num2 : Int
-var sumQ9 = 0
-
-print("get sum from a to b.")
-print("a: ", terminator: ""); num1 = 3; print(num1)
-print("b: ", terminator: ""); num2 = 10; print(num2)
-
-for i in num1...num2 {
-    sumQ9 += i
+func Q9() {
+    var num1, num2 : Int
+    var sum = 0
+    
+    print("get sum from a to b.")
+    print("a: ", terminator: ""); num1 = 3; print(num1)
+    print("b: ", terminator: ""); num2 = 10; print(num2)
+    
+    for i in num1...num2 {
+        sum += i
+    }
+    print(sum)
 }
-print(sumQ9)
+
+Q9()
 print()
 
 //MARK: - Q10
-var aQ10: Int
-var bQ10: Int
-var tmp = 0
-var arr = [6, 3, 9]
+func Q10() {
+    
+    
+    
+    var aQ10: Int
+    var bQ10: Int
+    var tmp = 0
+    var arr = [6, 3, 9]
+    
+    print("a: ", terminator: ""); aQ10 = 6; print(aQ10)
+    repeat {
+        print("b: ", terminator: ""); bQ10 = arr[tmp]; print(bQ10)
+        if aQ10 >= bQ10 {
+            print("Input value must be greater than a!")
+        }
+        tmp += 1
+    } while aQ10 >= bQ10
+    print("b - a = \(bQ10 - aQ10)")
+}
 
-print("a: ", terminator: ""); aQ10 = 6; print(aQ10)
-repeat {
-    print("b: ", terminator: ""); bQ10 = arr[tmp]; print(bQ10)
-    if aQ10 >= bQ10 {
-        print("Input value greater than a!")
-    }
-    tmp += 1
-} while aQ10 >= bQ10
-print("b - a = \(bQ10 - aQ10)")
+Q10()
 print()
 
 //MARK: - Q11
@@ -384,3 +398,4 @@ repeat {
 } while n17 <= 0
 spira(n: n17)
 print("\n")
+
