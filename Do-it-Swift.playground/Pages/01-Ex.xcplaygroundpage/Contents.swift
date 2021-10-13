@@ -190,9 +190,6 @@ print()
 
 //MARK: - Q10
 func Q10() {
-    
-    
-    
     var aQ10: Int
     var bQ10: Int
     var tmp = 0
@@ -213,165 +210,190 @@ Q10()
 print()
 
 //MARK: - Q11
-var nQ11: Int
-let sample = [-23, 0, 102319, 7]
-var index = 0
-var count = 0
-
-repeat {
-    print("n : ", terminator: "")
-    nQ11 = sample[index]
-    print(nQ11)
-    if nQ11 <= 0 {
-        print("Try again: Number should be greater than 0.")
+func Q11() {
+    var n: Int
+    let sample = [-23, 0, 102319, 7]
+    var index = 0
+    var count = 0
+    
+    repeat {
+        print("n : ", terminator: "")
+        n = sample[index]
+        print(n)
+        if n <= 0 {
+            print("Try again: Number should be greater than 0.")
+        }
+        index += 1
+    } while n <= 0
+    
+    while n % Int(pow(10, Double(count))) < n {
+        count += 1
     }
-    index += 1
-} while nQ11 <= 0
-
-while nQ11 % Int(pow(10, Double(count))) < nQ11 {
-    count += 1
+    
+    print("\(n) is \(count) digit(s) number.")
 }
 
-print("\(nQ11) is \(count) digit(s) number.")
+Q11()
 print()
 
 //MARK: - Q12
-
-print("  ", terminator: "|")
-for i in 1...9 {
-    print(String(format: "%3d", i), terminator: "")
-}
-print()
-for i in 0...9 {
-    print("--", terminator: i == 0 ? "+" : "-")
-}
-print()
-for i in 1...9 {
-    print(String(format:"%2d", i), terminator: "|")
-    for j in 1...9 {
-        print(String(format: "%3d", i*j), terminator: "")
+func Q12() {
+    print("  ", terminator: "|")
+    for i in 1...9 {
+        print(String(format: "%3d", i), terminator: "")
     }
     print()
+    for i in 0...9 {
+        print("--", terminator: i == 0 ? "+" : "-")
+    }
+    print()
+    for i in 1...9 {
+        print(String(format:"%2d", i), terminator: "|")
+        for j in 1...9 {
+            print(String(format: "%3d", i*j), terminator: "")
+        }
+        print()
+    }
 }
+
+Q12()
 print()
 
 //MARK: - Q13
-print("  ", terminator: "|")
-for i in 1...9 {
-    print(String(format: "%3d", i), terminator: "")
-}
-print()
-for i in 0...9 {
-    print("--", terminator: i == 0 ? "+" : "-")
-}
-print()
-for i in 1...9 {
-    print(String(format:"%2d", i), terminator: "|")
-    for j in 1...9 {
-        print(String(format: "%3d", i+j), terminator: "")
+func Q13() {
+    print("  ", terminator: "|")
+    for i in 1...9 {
+        print(String(format: "%3d", i), terminator: "")
     }
     print()
+    for i in 0...9 {
+        print("--", terminator: i == 0 ? "+" : "-")
+    }
+    print()
+    for i in 1...9 {
+        print(String(format:"%2d", i), terminator: "|")
+        for j in 1...9 {
+            print(String(format: "%3d", i+j), terminator: "")
+        }
+        print()
+    }
 }
+
+Q13()
 print()
 
 //MARK: - Q14
-var nQ13: Int
-
-print("n : ", terminator: "")
-nQ13 = 4
-print(nQ13)
-for i in 1...nQ13 {
-    for j in 1...nQ13 {
-        print("*", terminator: "  ")
+func Q14() {
+    var n: Int
+    
+    print("n : ", terminator: "")
+    n = 4
+    print(n)
+    for i in 1...n {
+        for j in 1...n {
+            print("*", terminator: "  ")
+        }
+        print()
     }
-    print()
 }
+
+Q14()
 print()
 
 //MARK: - Q15
-var height: Int
-var width: Int
-print("height :", terminator: " ")
-height = 3
-print(height)
-print("width :", terminator: " ")
-width = 7
-print(width)
-for i in 1...height {
-    for j in 1...width {
-        print("*", terminator: "  ")
+func Q15() {
+    var height: Int
+    var width: Int
+    print("height :", terminator: " ")
+    height = 3
+    print(height)
+    print("width :", terminator: " ")
+    width = 7
+    print(width)
+    for i in 1...height {
+        for j in 1...width {
+            print("*", terminator: "  ")
+        }
+        print()
     }
-    print()
 }
+
+Q15()
 print()
 
 //MARK: - Q16
-var n16: Int
-
-repeat {
-    print("How much layers do you want : ", terminator: "")
+func Q16() {
+    var n: Int
     
-    n16 = 5
-    print(n16)
+    repeat {
+        print("How much layers do you want : ", terminator: "")
+        
+        n = 5
+        print(n)
+        
+    } while n <= 0
     
-} while n16 <= 0
-
-
-// bottom-left lb
-func triangleLB(n: Int) {
-    for i in 1...n {
-        for _ in 1...i {
-            print("*", terminator: "  ")
+    
+    // bottom-left lb
+    func triangleLB(n: Int) {
+        for i in 1...n {
+            for _ in 1...i {
+                print("*", terminator: "  ")
+            }
+            print()
+        }
+    }
+    
+    //top-left
+    func triangleLU(n: Int) {
+        for i in stride(from: n, to: 0, by: -1) {
+            for _ in 1...i {
+                print("*", terminator: "  ")
+            }
+            print()
+        }
+    }
+    
+    //top-right
+    func triangleRU(n: Int) {
+        for i in 1...n {
+            for _ in stride(from: n+1-i, to: 0, by: -1) {
+                print("*", terminator: "  ")
+            }
+            print()
+            for _ in 1...i {
+                print(" ", terminator: "  ")
+            }
         }
         print()
     }
+    
+    // bottom-right
+    func triangleRB(n: Int) {
+        for i in 1...n {
+            for _ in stride(from: n, to: i, by: -1) {
+                print(" ", terminator: "  ")
+                
+            }
+            for _ in 1...i {
+                print("*", terminator: "  ")
+            }
 }
-
-//top-left
-func triangleLU(n: Int) {
-    for i in stride(from: n, to: 0, by: -1) {
-        for _ in 1...i {
-            print("*", terminator: "  ")
-        }
         print()
     }
-}
-
-//top-right
-func triangleRU(n: Int) {
-    for i in 1...n {
-        for _ in stride(from: n+1-i, to: 0, by: -1) {
-            print("*", terminator: "  ")
-        }
-        print()
-        for _ in 1...i {
-            print(" ", terminator: "  ")
-        }
-    }
+    
+    triangleLB(n: n)
+    print()
+    triangleLU(n: n)
+    print()
+    triangleRU(n: n)
+    print()
+    triangleRB(n: n)
     print()
 }
 
-// bottom-right
-func triangleRB(n: Int) {
-    for i in 1...n {
-        for _ in stride(from: n, to: i, by: -1) {
-            print(" ", terminator: "  ")
-            
-        }
-        for _ in 1...i {
-            print("*", terminator: "  ")
-        }
-        print()
-    }
-}
-
-triangleLB(n: n16)
+Q16()
 print()
-triangleLU(n: n16)
-print()
-triangleRU(n: n16)
-triangleRB(n: n16)
-print("\n")
 
 //MARK: - Q17
 func spira(n: Int) {
