@@ -30,5 +30,6 @@
         <page name="03-1_ssearch1"/>
         <page name="03-2_ssearch2"/>
         <page name="03-3_ssearch-sen"/>
+        <page name="03-4_bin-search"/>
     </pages>
 </playground>
