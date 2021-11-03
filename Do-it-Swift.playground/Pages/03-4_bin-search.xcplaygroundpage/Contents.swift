@@ -4,16 +4,6 @@ import Foundation
 var currentLine = 0
 let input = ["8", "1", "4", "23", "21", "56", "67", "79", "96", "100", "100"]
 
-func readLine() -> String? {
-    if currentLine < input.endIndex {
-        let line = input[currentLine]
-        currentLine += 1
-        return line
-    } else {
-        return nil
-    }
-}
-
 
 func binSearch(a: [Int], key: Int) -> Int? {
     let n = a.count
@@ -40,18 +30,18 @@ var x : [Int] = []
 print("Binary Search")
 print("number of Elements?", terminator: " $ ")
 //  Input
-numberofX = Int(readLine()!)!
+numberofX = Int(readLine(input, &currentLine)!)!
 print(numberofX)
 //  ======
 print("Type in ascending order: ")
 print("x[0] : ", terminator: "")
-x.append(Int(readLine()!)!)
+x.append(Int(readLine(input, &currentLine)!)!)
 print(x[0])
 for i in 1..<numberofX {
     var inputX : Int   // Input
     repeat {
         print("x[\(i)] : ", terminator: "")
-        inputX = Int(readLine()!)! // Input
+        inputX = Int(readLine(input, &currentLine)!)! // Input
         print(inputX)              // Input
     } while inputX < x[i-1]
     x.append(inputX)
@@ -60,7 +50,7 @@ print("\n array x is: \(x)\n")
 
 print("Search Key: ", terminator: "")
 //  Input
-key = Int(readLine()!)!
+key = Int(readLine(input, &currentLine)!)!
 print(key)
 //  =====
 index = binSearch(a: x, key: key)
