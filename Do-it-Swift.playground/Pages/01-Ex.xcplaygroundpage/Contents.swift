@@ -373,13 +373,12 @@ func Q16() {
         for i in 1...n {
             for _ in stride(from: n, to: i, by: -1) {
                 print(" ", terminator: "  ")
-                
             }
             for _ in 1...i {
                 print("*", terminator: "  ")
             }
-}
-        print()
+            print()
+        }
     }
     
     triangleLB(n: n)
@@ -396,28 +395,31 @@ Q16()
 print()
 
 //MARK: - Q17
-func spira(n: Int) {
-    for i in 1...n {
-        for _ in stride(from: n, to: i, by: -1) {
-            print(" ", terminator: "  ")
+func Q17() {
+    func spira(n: Int) {
+        for i in 1...n {
+            for _ in stride(from: n, to: i, by: -1) {
+                print(" ", terminator: "  ")
+            }
+            var starCount = (i - 1) * 2 + 1
+            for _ in 1...starCount {
+                print("*", terminator: "  ")
+            }
+            print()
         }
-        var starCount = (i - 1) * 2 + 1
-        for _ in 1...starCount {
-            print("*", terminator: "  ")
-        }
-        print()
     }
+    
+    var n: Int
+    
+    repeat {
+        print("How much layers do you want : ", terminator: "")
+        
+        n = 5
+        print(n)
+        
+    } while n <= 0
+    spira(n: n)
 }
-
-var n17: Int
-
-repeat {
-    print("How much layers do you want : ", terminator: "")
-    
-    n17 = 5
-    print(n17)
-    
-} while n17 <= 0
-spira(n: n17)
-print("\n")
+Q17()
+print()
 
