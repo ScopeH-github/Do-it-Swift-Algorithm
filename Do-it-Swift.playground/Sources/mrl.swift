@@ -12,6 +12,6 @@ public func readLine(_ input: [String], _ currentLine: inout Int) -> String? {
 
 public func runEx(Q: Int, _ code: () -> ()) {
     print("====== Q\(String(format: "%2d", Q)) ======")
-    code
+    code()
     print()
 }
