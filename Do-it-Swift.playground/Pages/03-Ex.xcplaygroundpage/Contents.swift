@@ -1,5 +1,6 @@
 import Foundation
 
+//  MARK: - Q1 
 func Q1() {
     func search(a: [Int], key: Int) -> Int? {
         var aTemp = a
@@ -39,6 +40,7 @@ func Q1() {
 
 runEx(Q: 1, Q1)
 
+// MARK: - Q2
 func Q2() {
     func search(a: [Int], key: Int) -> Int? {
         var index : Int? = nil
