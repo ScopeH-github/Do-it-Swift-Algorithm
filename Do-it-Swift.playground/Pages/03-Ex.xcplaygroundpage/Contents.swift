@@ -92,3 +92,26 @@ func Q2() {
 }
 
 runEx(Q: 2, Q2)
+
+//  MARK: - Q3
+func Q3() {
+    func searchIdx(_ a: [Int], key: Int, index: inout [Int]) -> Int {
+        var aTemp = a
+        aTemp.append(key)
+        for i in 0..<aTemp.count {
+            if aTemp[i] == key && i != a.count {
+                index.append(i)
+            }
+        }
+        return index.count
+    }
+    
+    let test = [1, 9, 2, 9, 4, 5, 6, 9]
+    let key = 9
+    var index : [Int] = []
+    let number = searchIdx(test, key: key, index: &index)
+    print(test)
+    print("\(key) are(is) \(number) in this array, on \(index).")
+}
+
+runEx(Q: 3, Q3)

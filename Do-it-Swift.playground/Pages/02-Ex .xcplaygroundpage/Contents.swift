@@ -24,8 +24,7 @@ func Q1() {
     print("Minimum value is \(minOf(array: height)).")
 }
 
-Q1()
-print()
+runEx(Q: 1, Q1)
 
 //MARK: - Q2
 func Q2() {
@@ -53,8 +52,7 @@ func Q2() {
     print("Sum of values is \(sumOf(array: height)).")
 }
 
-Q2()
-print()
+runEx(Q: 2, Q2)
 
 //MARK: - Q3
 func Q3() {
@@ -83,8 +81,7 @@ func Q3() {
     print("Average of values is \(aveOf(array: height)).")
 }
 
-Q3()
-print()
+runEx(Q: 4, Q4)
 
 //MARK: - Q4
 func Q4() {
@@ -112,8 +109,7 @@ func Q4() {
     print("Max of values is \(maxOf(array: height)).")
 }
 
-Q4()
-print()
+runEx(Q: 4, Q4)
 
 //  MARK: - Q5
 func swapValue<T>(_ x: Int, _ y: Int, _ a : inout [T]) { let t = a[x]; a[x] = a[y]; a[y] = t }

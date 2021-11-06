@@ -19,8 +19,7 @@ func Q1() {
     print(max4(a: a, b: b, c: c, d: d))
 }
 
-Q1()
-print()
+runEx(Q: 1, Q1)
 
 //MARK: - Q2
 
@@ -39,8 +38,7 @@ func Q2() {
     print(min3(a: a, b: b, c: c))
 }
 
-Q2()
-print()
+runEx(Q: 2, Q2)
 
 //MARK: - Q3
 func Q3() {
@@ -58,8 +56,7 @@ func Q3() {
     print(min4(a: a, b: b, c: c, d: d))
 }
 
-Q3()
-print()
+runEx(Q: 3, Q3)
 
 //MARK: - Q4
 func Q4() {
@@ -87,8 +84,7 @@ func Q4() {
     }
 }
 
-Q4()
-print()
+runEx(Q: 4, Q4)
 
 //MARK: - Q5
 func Q5() {
@@ -108,8 +104,7 @@ func Q5() {
     }
 }
 
-Q5()
-print()
+runEx(Q: 5, Q5)
 // 1C-1에서는 최악의 경우 3번만 비교하면 되지만 이번 예제의 경우 최악의 경우 10번을 비교해야 한다.
 
 //MARK: - Q6
@@ -132,8 +127,7 @@ func Q6() {
     print("Sum of 1 to \(n) is \(sum).")
 }
 
-Q6()
-print()
+runEx(Q: 6, Q6)
 
 //MARK: - Q7
 func Q7() {
@@ -152,8 +146,7 @@ func Q7() {
     print(sum)
 }
 
-Q7()
-print()
+runEx(Q: 7, Q7)
 
 //MARK: - Q8
 func Q8() {
@@ -167,8 +160,8 @@ func Q8() {
     sum = (1 + n) * n / 2
     print("Sum of 1 to \(n) = \(sum)")
 }
-Q8()
-print()
+
+runEx(Q: 8, Q8)
 
 //MARK: - Q9
 func Q9() {
@@ -185,8 +178,7 @@ func Q9() {
     print(sum)
 }
 
-Q9()
-print()
+runEx(Q: 9, Q9)
 
 //MARK: - Q10
 func Q10() {
@@ -206,8 +198,7 @@ func Q10() {
     print("b - a = \(bQ10 - aQ10)")
 }
 
-Q10()
-print()
+runEx(Q: 10, Q10)
 
 //MARK: - Q11
 func Q11() {
@@ -233,8 +224,7 @@ func Q11() {
     print("\(n) is \(count) digit(s) number.")
 }
 
-Q11()
-print()
+runEx(Q: 11, Q11)
 
 //MARK: - Q12
 func Q12() {
@@ -256,8 +246,7 @@ func Q12() {
     }
 }
 
-Q12()
-print()
+runEx(Q: 12, Q12)
 
 //MARK: - Q13
 func Q13() {
@@ -279,8 +268,7 @@ func Q13() {
     }
 }
 
-Q13()
-print()
+runEx(Q: 13, Q13)
 
 //MARK: - Q14
 func Q14() {
@@ -297,8 +285,7 @@ func Q14() {
     }
 }
 
-Q14()
-print()
+runEx(Q: 14, Q14)
 
 //MARK: - Q15
 func Q15() {
@@ -318,8 +305,7 @@ func Q15() {
     }
 }
 
-Q15()
-print()
+runEx(Q: 15, Q15)
 
 //MARK: - Q16
 func Q16() {
@@ -391,8 +377,7 @@ func Q16() {
     print()
 }
 
-Q16()
-print()
+runEx(Q: 16, Q16)
 
 //MARK: - Q17
 func Q17() {
@@ -420,6 +405,5 @@ func Q17() {
     } while n <= 0
     spira(n: n)
 }
-Q17()
-print()
 
+runEx(Q: 17, Q17)
