@@ -112,86 +112,90 @@ func Q4() {
 runEx(Q: 4, Q4)
 
 //  MARK: - Q5
-func swapValue<T>(_ x: Int, _ y: Int, _ a : inout [T]) { let t = a[x]; a[x] = a[y]; a[y] = t }
-
-func aryReverse(a: inout [Int]) {
-    let n = a.count
-    for i in 0..<n/2 {
-        for i in a {
-            print(i, terminator: " ")
+func Q5() {
+    
+    func swapValue<T>(_ x: Int, _ y: Int, _ a : inout [T]) { let t = a[x]; a[x] = a[y]; a[y] = t }
+    
+    func aryReverse(a: inout [Int]) {
+        let n = a.count
+        for i in 0..<n/2 {
+            for i in a {
+                print(i, terminator: " ")
+            }
+            print()
+            print("Switch: a[\(i)], a[\(n-i-1)]")
+            swapValue(i, n-i-1, &a)
         }
-        print()
-        print("Switch: a[\(i)], a[\(n-i-1)]")
-        swapValue(i, n-i-1, &a)
+        
     }
+    var x: [Int] = []
+    var nx: Int
+    
+    nx = Int.random(in: 3...10)
+    for i in 0..<nx {
+        x.append(Int.random(in: -100...100))
+    }
+    aryReverse(a: &x)
+    for i in x {
+        print(i, terminator: " ")
+    }
+    print()
+    print("Reversed sort complete.")
 }
-
-var x: [Int] = []
-var nx: Int
-
-nx = Int.random(in: 3...10)
-for i in 0..<nx {
-    x.append(Int.random(in: -100...100))
-}
-aryReverse(a: &x)
-for i in x {
-    print(i, terminator: " ")
-}
-print()
-print("Reversed sort complete.")
-print()
+runEx(Q: 5, Q5)
 
 //MARK: - Q6
-func cardConv(x: inout UInt, n: Int, _ d: inout [Character]) -> Int {
-    let dchar = "0123456789ABCDEFGHIJKLMNOPQRStUVWXYZ"
-    var digits = 0
-    if x == 0 {
-        d[digits] = dchar[dchar.startIndex]
-        digits += 1
-    } else {
-        while x != 0 {
-            d.insert(dchar[dchar.index(dchar.startIndex, offsetBy: Int(x) % n)], at: 0)
+func Q6() {
+    func cardConv(x: inout UInt, n: Int, _ d: inout [Character]) -> Int {
+        let dchar = "0123456789ABCDEFGHIJKLMNOPQRStUVWXYZ"
+        var digits = 0
+        if x == 0 {
+            d[digits] = dchar[dchar.startIndex]
             digits += 1
-            x /= UInt(n)
+        } else {
+            while x != 0 {
+                d.insert(dchar[dchar.index(dchar.startIndex, offsetBy: Int(x) % n)], at: 0)
+                digits += 1
+                x /= UInt(n)
+            }
         }
+        return digits
     }
-    return digits
+    
+    var n: UInt
+    var cd: Int
+    var dno: Int
+    var cno: [Character] = []
+    var retry: Bool = false
+    
+    print("Convert radix from decimal.")
+    repeat {
+        n = UInt.random(in: 0...999)
+        let entered = n
+        print("Number(non-negative): \(n)")
+        repeat {
+            cd = Int.random(in: 1...40)
+            print("Radix (2-36): \(cd)")
+        } while cd < 2 || cd > 36
+        dno = cardConv(x: &n, n: cd, &cno)
+        print("\n\(entered) is ", terminator : "")
+        for i in cno {
+            print(i, terminator: "")
+        }
+        print(" in radix \(cd).\n")
+        let answer = Int.random(in: 0...1)
+        cno.removeAll()
+        print("Retry? (1-Yes / 0-No) : \(answer)")
+        if answer == 0 {
+            retry = false
+        } else {
+            retry = true
+        }
+        print("\n")
+    } while retry
 }
 
-var no6: UInt
-var cd6: Int
-var dno6: Int
-var cno6: [Character] = []
-var retry6: Bool = false
-
-print("Convert radix from decimal.")
-repeat {
-    no6 = UInt.random(in: 0...999)
-    let entered = no6
-    print("Number(non-negative): \(no6)")
-    repeat {
-        cd6 = Int.random(in: 1...40)
-        print("Radix (2-36): \(cd6)")
-    } while cd6 < 2 || cd6 > 36
-    dno6 = cardConv(x: &no6, n: cd6, &cno6)
-    print("\n\(entered) is ", terminator : "")
-    for i in cno6 {
-        print(i, terminator: "")
-    }
-    print(" in radix \(cd6).\n")
-    let answer = Int.random(in: 0...1)
-    cno6.removeAll()
-    print("Retry? (1-Yes / 0-No) : \(answer)")
-    if answer == 0 {
-        retry6 = false
-    } else {
-        retry6 = true
-    }
-    print("\n")
-} while retry6
-
-print()
-
+runEx(Q: 6, Q6)
 
 //  MARK: - Q7
 import Foundation
